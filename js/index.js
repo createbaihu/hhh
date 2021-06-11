@@ -148,6 +148,7 @@ $(function () {
           $(".btn").slideDown()
           $(".btn div").slideDown()
           alert("游戏结束，最终得分" + $(".score").html())
+          location.reload()
         }
 
 
@@ -196,7 +197,7 @@ $(function () {
           food.removeClass("food")
           isfood = false
         }
-      }, 70)
+      }, 150)
     }
   })
 })
