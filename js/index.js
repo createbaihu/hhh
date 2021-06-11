@@ -32,7 +32,11 @@ $(function () {
 
     $(document).keydown(function (e) { //方向控制
       proviousdirection = direction
-      direction = e.keyCode
+      if (e.keyCode != 37 && e.keyCode != 38 && e.keyCode != 39 && e.keyCode != 40) {
+        direction = direction
+      } else {
+        direction = e.keyCode
+      }
       if (snake.length >= 2) {
         if (proviousdirection == 37 && direction == 39) {
           direction = 37
@@ -93,6 +97,7 @@ $(function () {
 
 
       var timer = setInterval(function () {
+
         var currenthead = snake[snake.length - 1]
         var isDea = false;
 
@@ -197,7 +202,7 @@ $(function () {
           food.removeClass("food")
           isfood = false
         }
-      }, 150)
+      }, 100)
     }
   })
 })
